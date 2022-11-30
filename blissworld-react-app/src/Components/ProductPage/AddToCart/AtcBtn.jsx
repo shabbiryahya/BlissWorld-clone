@@ -2,11 +2,11 @@ import React from "react";
 import "./AtcBtn.css";
 
 
-export const AtcBtn = () => {
+export const AtcBtn = ({btnName, price}) => {
   return (
     <div>
       <button className="btn">
-        ADD TO CART
+        {`${btnName} $${price}`}
       </button>
       
     </div>
