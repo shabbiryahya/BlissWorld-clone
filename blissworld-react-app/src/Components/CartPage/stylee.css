@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Noto+Sans+JP:wght@500&family=Roboto:wght@100;300&family=Rubik&family=Source+Sans+Pro:wght@200&display=swap");
+
+.nav {
+  /* border: 2px solid black; */
+  height: 100px;
+  background-color: rgb(140, 208, 227);
+  position: sticky;
+}
+
+.nav div {
+  height: 80px;
+  /* border: 2px solid black; */
+  width: 10%;
+  float: right;
+  margin-right: 40px;
+  background-color: blueviolet;
+}
+.cart_modal {
+  width: 100%;
+
+  max-height: calc(100vh - 92px);
+  min-height: calc(100vh - 92px);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cart_modal > div {
+  /* width: 27%; */
+  width: 415px;
+  max-height: calc(100vh - 92px);
+  min-height: calc(100vh - 92px);
+  float: right;
+  background-color: white;
+  /* height: 100vh; */
+  overflow: scroll;
+}
+
+#cart_child {
+  padding-top: 25px;
+  border-bottom: 1px rgb(166, 191, 222) solid;
+  width: 95%;
+  margin: auto;
+  height: 25px;
+  font-size: 12px;
+  font-family: "Archer A", "Archer B";
+  display: flex;
+  justify-content: space-between;
+}
+
+#cart_child2 {
+  /* padding-top: 15px; */
+  border-bottom: 1px rgb(166, 191, 222) solid;
+  width: 95%;
+  margin: auto;
+  /* height: 25px; */
+  text-align: center;
+
+  /* font-family: "Archer A", "Archer B"; */
+  /* display: flex;
+  justify-content: space-between; */
+}
+#cart_child2 h3 {
+  margin-top: 11px;
+  margin-bottom: 0px;
+  font-family: "Rubik", sans-serif;
+}
+
+#cart_child2 p {
+  margin-top: 3px;
+  margin-bottom: 22px;
+}
+
+#datadiv {
+  width: 95%;
+  display: flex;
+  border-bottom: 1px solid blueviolet;
+  height: 120px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+#datadivchild1 {
+  width: 40%;
+  /* border: 1px solid rgb(10, 10, 10); */
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#datadivchild2 {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* border: 1px solid rgb(10, 10, 10); */
+  height: 120px;
+}
+
+#pmbuton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(117, 108, 108);
+  height: 31px;
+  width: 40%;
+  padding: 0%;
+  margin-top: 6px;
+  /* font-size: 2px; */
+}
+
+#coupon {
+  height: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  font-family: "Archer A", "Archer B";
+  align-items: center;
+  border-bottom: 1px rgb(166, 191, 222) solid;
+}
+
+#parentcoupen {
+  width: 95%;
+  margin: auto;
+  border-bottom: 1px rgb(166, 191, 222) solid;
+  padding-bottom: 15px;
+}
+#parentcoupen2 {
+  width: 95%;
+  margin: auto;
+  /* border-bottom: 1px rgb(166, 191, 222) solid; */
+  padding-bottom: 15px;
+}
+
+#inputd {
+  width: 100%;
+  margin: auto;
+  /* margin-top: 5px; */
+  border: 1px rgb(166, 191, 222) solid;
+}
+#parentcoupen input {
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  font-family: "Archer A", "Archer B";
+  border: none;
+  outline: none;
+  width: 95%;
+  margin: auto;
+}
+#addcoupen {
+  border: none;
+  /* display: none; */
+  outline: none;
+  background-color: white;
+  text-decoration: underline;
+}
+
+#addcou {
+  border: none;
+  /* display: none; */
+  outline: none;
+  background-color: white;
+  font-weight: 600;
+}
+#cancelcoupen {
+  border: none;
+  display: none;
+  outline: none;
+  background-color: white;
+  text-decoration: underline;
+}
+#buttonss {
+  display: flex;
+  /* justify-content: space-around; */
+  column-gap: 15px;
+  /* align-items: center; */
+  width: 100%;
+  /* margin: auto; */
+  margin-top: 0px;
+}
+#datadivchild1 img {
+  width: 50%;
+  height: 50%;
+}
+#atag {
+  font-family: "Archer A", "Archer B";
+  font-size: 14px;
+  font-weight: 600;
+}
+#atag + p {
+  font-size: 12px;
+  font-family: "Archer A", "Archer B";
+  text-align: left;
+  margin-top: 7px;
+}
+
+#pmbuton > button {
+  width: 30%;
+  font-size: 25px;
+  /* height: 25px; */
+  display: flex;
+  margin: 0%;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background-color: white;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 151, 209, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+#doller {
+  font-size: 18px;
+  font-family: "Archer A", "Archer B";
+  margin-top: 19px;
+}
+
+#idp {
+  /* border-bottom: 1px black solid; */
+  text-decoration: underline;
+  color: #000;
+  font-size: 13px;
+  margin-top: 20px;
+}
+#checkout {
+  width: 90%;
+  /* border: 1px solid black; */
+  height: 40px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background-color: rgb(140, 208, 227);
+  color: white;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 151, 209, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+#closethe {
+  display: none;
+}
+#checkout:hover {
+  background-color: rgb(217, 156, 210);
+}
+#couponbutton {
+  width: 40%;
+  /* border: 1px solid black; */
+  height: 40px;
+  /* margin-left: 9px; */
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  /* background-color: rgb(140, 208, 227); */
+  /* background-color: #df97d1; */
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 151, 209, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  font-weight: 600;
+  /* border-bottom: 1px rgb(166, 191, 222) solid; */
+}
+
+#couponbutton:hover {
+  background-color: rgb(217, 156, 210);
+}
+
+#radiant {
+  width: 95%;
+  height: 30px;
+  background-color: rgb(217, 156, 210);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Archer A", "Archer B";
+  font-size: 14px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 151, 209, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+#ankortag {
+  width: 100%;
+  font-size: 14px;
+  font-family: "Archer A", "Archer B";
+  text-decoration: underline;
+  margin: auto;
+  text-align: center;
+  margin-top: 18px;
+}
+
+#radiant2 {
+  width: 95%;
+  height: 73px;
+  background-color: rgb(115, 210, 230);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: white;
+  font-family: "Archer A", "Archer B";
+  font-size: 14px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(223, 151, 209, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+#radiant2 > p {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
