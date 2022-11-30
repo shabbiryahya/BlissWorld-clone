@@ -1,0 +1,57 @@
+/* *{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+} */
+
+.product-card{
+    border:1px solid black;
+    width:32%;
+}
+
+.product-card-image{
+    width:100%;
+    min-height: auto;
+}
+
+.product-card-image img{
+    width:100%;
+}
+
+.product-card-body{
+    height:auto;
+    align-items: center;
+    padding: 10px 10px 21px 10px
+}
+
+.teaser-card-rating{
+    /* border:1px solid red; */
+    margin-bottom: 10px;
+}
+
+.card-title{ 
+    /* border:1px solid red; */
+    padding:0px;
+    margin:0px;
+    font-size:16px;
+    font-weight:500;
+    margin-bottom: 10px;
+}
+.card-short-description{
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.card-button{ 
+    align-items: center;
+    width: 100%;
+    
+}
+
+.card-button-first-child{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:10px;
+}
