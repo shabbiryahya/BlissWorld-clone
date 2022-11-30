@@ -7,8 +7,8 @@ import { ProductList } from "./Components/ProductPage/ProductList/ProductList";
 function App() {
   return (
     <div className="App">
-      {/* <ProductCard />
-      <AtcBtn /> */}
+      {/* <ProductCard /> */}
+      {/* <AtcBtn /> */}
       <ProductList />
     </div>
   );

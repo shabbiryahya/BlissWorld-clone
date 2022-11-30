@@ -5,14 +5,23 @@ import "./ProductCard.css";
 function ProductCard() {
   return (
     <div className="product-card">
-      <div className="product-card-image">
+      <figure>
+        <div className="product-card-image">
         <img
-          src="https://cdn11.bigcommerce.com/s-9p889rxpkb/images/stencil/1280x1280/products/300/1141/lemonsage_body_butter_sku_1003_10000_01__74065.1668812297.jpg?c=2"
-          alt="product"
-        />
-      </div>
+            src="https://cdn11.bigcommerce.com/s-9p889rxpkb/images/stencil/800w/products/300/1503/LS-Body-Butter-reviews__64796.1668812297.jpg"
+            alt="product-back"
+            className="img-back"
+          />
+          <img
+            src="https://cdn11.bigcommerce.com/s-9p889rxpkb/images/stencil/1280x1280/products/300/1141/lemonsage_body_butter_sku_1003_10000_01__74065.1668812297.jpg?c=2"
+            alt="product"
+            className="img-front"
+          />
+          
+        </div>
+      </figure>
       <div className="product-card-body" style={{}}>
-        <div className="teaser-card-rating" style={{ height: "21px" }}>
+        <div className="teaser-card-rating" style={{}}>
           <p>rating: 4/5</p>
         </div>
 
@@ -37,7 +46,7 @@ function ProductCard() {
             {/* to adding sizing view end */}
           </div>
           <div className="card-button-last-child">
-            <AtcBtn />
+            <AtcBtn btnName= {"ADD TO CART"} price={12} />
           </div>
         </div>
       </div>
