@@ -1,11 +1,15 @@
-import './App.css';
-import LandingPage from './Components/LandingPage/LandingPage';
+import "./App.css";
+import ProductCard from "./Components/ProductPage/ProductCard/ProductCard";
+import { AtcBtn } from "./Components/ProductPage/AddToCart/AtcBtn";
+import { ProductList } from "./Components/ProductPage/ProductList/ProductList";
 
 
 function App() {
   return (
     <div className="App">
-      <LandingPage/>
+      {/* <ProductCard /> */}
+      {/* <AtcBtn /> */}
+      <ProductList />
     </div>
   );
 }
