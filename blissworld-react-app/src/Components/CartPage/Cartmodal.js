@@ -92,6 +92,7 @@ function Cartmodal() {
             </div>
           );
         })}
+
         <div id="parentcoupen">
           <div id="coupon">
             <strong>Coupon Code</strong>
