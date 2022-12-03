@@ -1,22 +1,29 @@
 import React from "react";
 import { AtcBtn } from "../AddToCart/AtcBtn";
 import "./ProductCard.css";
+import {useNavigate} from "react-router-dom"
 
-function ProductCard({ item }) {
+function ProductCard({ item, endpoint }) {
+  const nav = useNavigate();
+
+  const handleCardClick=(item)=>{
+    nav(`/${endpoint}/${item.id}`)
+  }
+
   return (
-    <div className="product-card">
+    <div  className="product-card">
       <figure>
-        <div className="product-card-image">
+        <div onClick={()=> {handleCardClick(item)}} className="product-card-image">
           <img src={item.image2} alt="product-back" className="img-back" />
           <img src={item.image1} alt="product" className="img-front" />
         </div>
       </figure>
       <div className="product-card-body" style={{}}>
-        <div className="teaser-card-rating" style={{}}>
+        <div onClick={()=> {handleCardClick(item)}} className="teaser-card-rating" style={{}}>
           <p>rating: 4/5</p>
         </div>
 
-        <div className="card-title-short-description">
+        <div onClick={()=> {handleCardClick(item)}} className="card-title-short-description">
           <h3 className="card-title">
             <a href="">{item.title}</a>
           </h3>

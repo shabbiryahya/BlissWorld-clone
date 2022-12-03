@@ -15,13 +15,17 @@ import {
   AccordionIcon,
   Box,
 } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
 
-export const ProductList = ({ endPoint }) => {
+export const ProductList = () => {
+  const {title} = useParams();
+  console.log(title);
   const [totalProducts, setTotalProducts] = useState([]);
   const [categories, setCategories] = useState({});
-
+  const endPoint = "bestSeller";
   useEffect(() => {
-    fetch(`https://blissworldapi.onrender.com/bestSeller`)
+    
+    fetch(`https://blissworldapi.onrender.com/${endPoint}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log("total data", data);
@@ -33,9 +37,7 @@ export const ProductList = ({ endPoint }) => {
       });
   }, []);
 
-  console.log("state", categories);
-  // console.log("Object.keys(categories)", Object.keys(categories));
-  // console.log("Object.keys(categories)", categories["BY CONCERN"]);
+  
 
   return (
     <div className="parent-container">
@@ -87,7 +89,7 @@ export const ProductList = ({ endPoint }) => {
         </div>
         <div className="product-container">
           {totalProducts.map((item, index) => (
-            <ProductCard item={item} key={index + 1} />
+            <ProductCard endpoint={endPoint} item={item} key={index + 1} />
           ))}
         </div>
       </div>

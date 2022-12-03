@@ -1,6 +1,6 @@
 var initialData = {
   cart: [],
-  carts: [{ itemdetails: {}, count: 0 }],
+  // carts: [{ itemdetails: {}, count: 0 }],
 };
 
 const cartReducer = (storeData = initialData, action) => {
