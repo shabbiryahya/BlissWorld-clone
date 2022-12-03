@@ -75,15 +75,15 @@
   width: 95%;
   display: flex;
   border-bottom: 1px solid blueviolet;
-  height: 120px;
+  height: 135px;
   margin: auto;
   margin-top: 15px;
 }
 
 #datadivchild1 {
-  width: 40%;
+  width: 50%;
   /* border: 1px solid rgb(10, 10, 10); */
-  height: 120px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,8 +183,8 @@
   margin-top: 0px;
 }
 #datadivchild1 img {
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
 }
 #atag {
   font-family: "Archer A", "Archer B";
@@ -426,7 +426,7 @@
 }
 
 #child33 {
-  height: 250px;
+  height: 136px;
   width: 100%;
   /* border: 1px solid black; */
   display: flex;
@@ -534,7 +534,7 @@ div:nth-child(3) {
 }
 #paymentchildd {
   font-size: 20px;
-  height: 300px;
+  height: 253px;
 }
 #disp2 {
   display: flex;
@@ -654,12 +654,14 @@ div:nth-child(3) {
 
 #inputdivpay > div:first-child {
   width: 80%;
-  border: 1px solid black;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 #inputdivpay > div:last-child {
   width: 19%;
-  border: 1px solid black;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 #inputpay1 {
@@ -710,17 +712,28 @@ div:nth-child(3) {
   text-decoration: underline;
 }
 
+#coupensub2 {
+  margin: 0;
+  padding: 0%;
+  border: none;
+  outline: none;
+  background-color: white;
+  text-decoration: underline;
+  display: none;
+}
+
 #secondcoupendiv {
   /* border: 1px solid black; */
   width: 95%;
   height: 50px;
-  display: flex;
+  display: none;
   column-gap: 20px;
 }
 #secondcoupendiv > div:first-child {
   width: 60%;
-  border: 1px solid black;
+  border: 1px solid grey;
   height: 50px;
+  border-radius: 5px;
 }
 
 #secondcoupendiv > div:first-child input {
@@ -733,7 +746,8 @@ div:nth-child(3) {
 
 #secondcoupendiv > div:last-child {
   width: 30%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border-radius: 5px;
   height: 50px;
   display: flex;
   align-items: center;

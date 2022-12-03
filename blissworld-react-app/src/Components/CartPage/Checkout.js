@@ -17,6 +17,19 @@ const Checkout = () => {
       .then((json) => usestate(json));
   };
 
+  const changee = () => {
+    document.getElementById("secondcoupendiv").style.display = "flex";
+    document.getElementById("child33").style.height = "250px";
+    document.getElementById("coupensub2").style.display = "block";
+    document.getElementById("coupensub").style.display = "none";
+  };
+
+  const changee2 = () => {
+    document.getElementById("secondcoupendiv").style.display = "none";
+    document.getElementById("child33").style.height = "136px";
+    document.getElementById("coupensub2").style.display = "none";
+    document.getElementById("coupensub").style.display = "block";
+  };
   return (
     <div>
       <div id="dotebackground"></div>
@@ -86,6 +99,7 @@ const Checkout = () => {
                       <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/1200px-Mastercard_2019_logo.svg.png"
                         width="40"
+                        alt="vikram"
                       />
 
                       <img
@@ -100,11 +114,13 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
+
                 <div id="labeldiv1">
                   <div>Credit Card Number</div>
                   <div>Expiration</div>
                 </div>
 
+                {/* <div id="hideeee"> */}
                 <div id="inputdivpay">
                   <div id="lockd">
                     <input id="inputpay1" type="tel" maxLength="16" />
@@ -136,6 +152,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 </div>
+                {/* </div> */}
               </div>
 
               <div>
@@ -209,10 +226,37 @@ const Checkout = () => {
                   <div id="datadivchild1">
                     <img src={e.img} alt="gh" />
                   </div>
-                  <div id="datadivchild2">
-                    <a id="atag">{e.name}</a>
+                  <div
+                    id="datadivchild2"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "row",
+                      justifycontent: "space-between",
+                      // justifyContent: "space-between",
+                      alignItem: "center",
+                    }}
+                  >
+                    <a
+                      id="atag"
+                      style={{
+                        display: "flex",
+                        alignitems: "center",
+                        width: "75%",
+                      }}
+                    >
+                      {e.name}
+                    </a>
 
-                    <div id="buttonss">
+                    <div
+                      id="buttonss"
+                      style={{
+                        display: "flex",
+                        justifcontent: "space-around",
+                        alignitems: "center",
+                        width: "20%",
+                      }}
+                    >
                       <p id="doller">${e.price}</p>
                     </div>
                   </div>
@@ -236,7 +280,23 @@ const Checkout = () => {
               <span>$18</span>
             </div>
             <div id="coupensubp">
-              <button id="coupensub">Enter Coupon code</button>
+              <button
+                onClick={() => {
+                  changee();
+                }}
+                id="coupensub"
+              >
+                Enter Coupon code
+              </button>
+
+              <button
+                onClick={() => {
+                  changee2();
+                }}
+                id="coupensub2"
+              >
+                cancel
+              </button>
             </div>
 
             <div id="secondcoupendiv">
