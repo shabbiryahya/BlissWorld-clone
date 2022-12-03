@@ -13,13 +13,14 @@ import { ProductDescription } from "./Components/ProductPage/ProductDescription/
 function App() {
   return (
     <div className="App">
+      
       {/* <ProductCard /> */}
       {/* <AtcBtn /> */}
       {/* <ProductData /> */}
       
       {/* <ProductDescription /> */}
       {/* <PracticeCartPage /> */}
-      {/* <AllRoutes /> */}
+      <AllRoutes />
       <ProductList />
     </div>
   );
