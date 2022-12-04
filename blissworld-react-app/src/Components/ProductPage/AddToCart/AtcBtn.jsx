@@ -3,8 +3,10 @@ import "./AtcBtn.css";
 import { action } from "../../../Redux/action";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const AtcBtn = ({ item, btnName, price }) => {
+  const nav = useNavigate();
   const dispatch = useDispatch();
   const cartData = useSelector((storeData) => {
     return storeData.cart;
@@ -12,6 +14,9 @@ export const AtcBtn = ({ item, btnName, price }) => {
 
   const sendDataToCart = () => {
     // console.log("ATC button is clicked", item);
+
+    nav("/cart");
+
     let match = cartData.filter((ele) => ele.id === item.id);
     if (match.length > 0) {
       match[0].count++;

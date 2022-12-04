@@ -18,14 +18,13 @@ import {
 import { useParams } from "react-router-dom";
 
 export const ProductList = () => {
-  const {title} = useParams();
+  const { title } = useParams();
   console.log(title);
   const [totalProducts, setTotalProducts] = useState([]);
   const [categories, setCategories] = useState({});
   const endPoint = "bestSeller";
   useEffect(() => {
-    
-    fetch(`https://blissworldapi.onrender.com/${endPoint}`)
+    fetch(`https://blissworld.glitch.me/${endPoint}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log("total data", data);
@@ -36,8 +35,6 @@ export const ProductList = () => {
         console.log("something went wrong");
       });
   }, []);
-
-  
 
   return (
     <div className="parent-container">

@@ -2,29 +2,65 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./stylee.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
-function Cartmodal() {
-  const [state, usestate] = useState([]);
+import { useDispatch, useSelector } from "react-redux";
+import { action } from "../../Redux/action";
+import { ProductList } from "../ProductPage/ProductList/ProductList";
+import { useNavigate } from "react-router-dom";
 
-  useEffect(() => {
-    getdata();
-  }, []);
-  const getdata = () => {
-    fetch("https://vikramdata.onrender.com/products")
-      .then((res) => res.json())
-      .then((json) => usestate(json));
+function Cartmodal() {
+  const nav = useNavigate();
+  const [state, usestate] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
+  const dispatch = useDispatch();
+
+  const cartData = useSelector((storeData) => {
+    return storeData.cart;
+  });
+  console.log("cartdata in modal", cartData);
+
+  const changeCartState = () => {
+    usestate(cartData);
   };
 
-  async function Put(id, value) {
-    await fetch(`https://vikramdata.onrender.com/products/${id}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        q: value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+  console.log("checking state", state);
+
+  useEffect(() => {
+    changeCartState();
+    // getdata();
+  }, []);
+
+  const cartTotalPrice = (item) => {
+    setCartTotal((prev) => prev + item.count * item.price);
+  };
+
+  const increaseTotalPrice = (item) => {
+    console.log("increase function is calling", item);
+    setCartTotal((prev) => prev + item.price);
+  };
+  const decreaseTotalPrice = (item) => {
+    console.log("increase function is calling", item);
+    setCartTotal((prev) => prev - item.price);
+  };
+
+  const decCountCart = (item) => {
+    let match = cartData.filter((ele) => ele.id === item.id);
+    if (match.length > 0) {
+      match[0].count--;
+      let newCartData = cartData.filter((ele) => ele.id !== item.id);
+      action([...newCartData, match[0]], dispatch);
+    }
+    decreaseTotalPrice(item);
+  };
+
+  const incCountCart = (item) => {
+    let match = cartData.filter((ele) => ele.id === item.id);
+    if (match.length > 0) {
+      match[0].count++;
+      let newCartData = cartData.filter((ele) => ele.id !== item.id);
+      action([...newCartData, match[0]], dispatch);
+    }
+    increaseTotalPrice(item);
+  };
 
   function openn() {
     document.getElementById("cancelcoupen").style.display = "block";
@@ -37,12 +73,27 @@ function Cartmodal() {
     document.getElementById("addcoupen").style.display = "block";
     document.getElementById("closethe").style.display = "none";
   }
+
+  const closemodale = () => {
+    // document.getElementById("cart_modal").style.display = "none";
+    nav("/product");
+  };
+
+  const proceedToCheckout = () => {
+    nav("/checkout");
+  };
   return (
-    <div className="cart_modal">
+    <div className="cart_modal" id="cart_modal">
       <div>
         <div id="cart_child">
-          <a>{"< "}KEEP SHOPPING</a>
-          <a>VIEW FULL SHOPPING BAG{" >"}</a>
+          <a
+            onClick={() => {
+              closemodale();
+            }}
+          >
+            {"< "}KEEP SHOPPING
+          </a>
+          {/* <a>VIEW FULL SHOPPING BAG{" >"}</a> */}
         </div>
 
         <div id="cart_child2">
@@ -51,38 +102,45 @@ function Cartmodal() {
         </div>
         {state.map((e) => {
           return (
-            <div id="datadiv">
+            <div id="datadiv" onLoad={() => cartTotalPrice(e)}>
               <div id="datadivchild1">
-                <img src={e.img} alt="gh" />
+                <img src={e.image1} alt="gh" />
               </div>
               <div id="datadivchild2">
-                <a id="atag">{e.name}</a>
+                <a id="atag">{e.title}</a>
                 <p>{e.description}</p>
                 <div id="buttonss">
                   <div id="pmbuton">
-                    {/* <button>-</button> */}
-                    <FaMinus
-                      color="grey"
-                      onClick={() => {
-                        Put(e.id, e.q - 1);
+                    <button
+                      id="decrement"
+                      disabled={e.count == 1 ? true : false}
+                      onClick={() => decCountCart(e)}
+                    >
+                      <FaMinus
+                        color="grey"
 
-                        setTimeout(() => {
-                          getdata();
-                        }, 1);
-                      }}
-                    />
-                    {e.q}
-                    {/* <button>+</button> */}
+                        // onClick={() => {
+                        //   Put(e.id, e.q - 1);
+
+                        //   setTimeout(() => {
+                        //     getdata();
+                        //   }, 1);
+                        // }}
+                      />
+                    </button>
+                    {e.count}
+
                     <FaPlus
-                      disabled={e.q == 1 ? true : false}
                       color="grey"
-                      onClick={() => {
-                        Put(e.id, e.q + 1);
+                      onClick={() => incCountCart(e)}
 
-                        setTimeout(() => {
-                          getdata();
-                        }, 1);
-                      }}
+                      // onClick={() => {
+                      //   Put(e.id, e.q + 1);
+
+                      //   setTimeout(() => {
+                      //     getdata();
+                      //   }, 1);
+                      // }}
                     />
                   </div>
                   <p id="idp">Remove</p>
@@ -126,7 +184,7 @@ function Cartmodal() {
         <div id="parentcoupen2">
           <div id="coupon">
             <strong>Grand total:</strong>
-            <button id="addcou">${44}</button>
+            <button id="addcou">${cartTotal}</button>
             {/* <button id="cancelcoupen">Cancel</button> */}
           </div>
         </div>
@@ -137,27 +195,20 @@ function Cartmodal() {
           <p>To use a gift card please call customer support: 888-243-8825</p>
         </div>
         {/* <div id="ankor"> */}
-        <p id="ankortag">VIEW FULL SHOPPING BAG</p>
+        {/* <p id="ankortag">VIEW FULL SHOPPING BAG</p> */}
         {/* </div> */}
 
-        <div id="checkout">CHECKOUT </div>
+        <div
+          id="checkout"
+          onClick={() => {
+            proceedToCheckout();
+          }}
+        >
+          CHECKOUT{" "}
+        </div>
       </div>
     </div>
   );
 }
 
 export default Cartmodal;
-
-// <ul>
-// {state.map((e) => {
-//   return (
-
-//       <li>
-//         <img src={e.image} alt={e.title} />
-//         <h3>{e.title}</h3>
-//         <p>{e.id}</p>
-//       </li>
-
-//   );
-// })}
-// </ul>

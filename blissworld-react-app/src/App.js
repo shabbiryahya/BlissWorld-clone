@@ -14,7 +14,7 @@ import { ProductDescription } from "./Components/ProductPage/ProductDescription/
 function App() {
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       {/* <Cartmodal /> */}
       <Checkout />
       {/* <ProductCard /> */}
@@ -23,8 +23,8 @@ function App() {
 
       {/* <ProductDescription /> */}
       {/* <PracticeCartPage /> */}
-      <AllRoutes />
-      <ProductList />
+      {/* <AllRoutes /> */}
+      {/* <ProductList /> */}
     </div>
   );
 }

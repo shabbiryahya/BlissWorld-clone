@@ -19,17 +19,24 @@
 }
 .cart_modal {
   width: 100%;
-
-  max-height: calc(100vh - 92px);
-  min-height: calc(100vh - 92px);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  /* max-height: calc(100vh - 92px);
+  min-height: calc(100vh - 92px); */
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+#decrement {
+  background-color: white;
+  outline: none;
+  border: none;
+}
 .cart_modal > div {
   /* width: 27%; */
   width: 415px;
-  max-height: calc(100vh - 92px);
-  min-height: calc(100vh - 92px);
+  height: 100vh;
   float: right;
   background-color: white;
   /* height: 100vh; */
@@ -210,12 +217,7 @@
   border: none;
   outline: none;
   background-color: white;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(223, 151, 209, 1) 40%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  /* background: rgb(2, 0, 36); */
 }
 
 #doller {
@@ -379,22 +381,22 @@
   margin: auto;
   margin-top: 50px;
   display: flex;
-  column-gap: 20px;
+  column-gap: 80px;
 }
 
 #child_1 {
   width: 50%;
   /* border: 2px solid black; */
-
+  border-bottom: 1px solid gray;
   height: 1000px;
   margin-left: auto;
 }
 
 #child_2 {
   width: 100%;
-  /* border: 2px solid black; */
+  border-bottom: 1px solid grey;
   margin: auto;
-  height: 700px;
+  height: 400px;
   margin-top: 50px;
 
   position: relative;
@@ -426,12 +428,12 @@
 }
 
 #child33 {
-  height: 136px;
+  height: 100px;
   width: 100%;
-  /* border: 1px solid black; */
+  /* border-bottom: 1px solid black; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -556,9 +558,10 @@ div:nth-child(3) {
 #parentcartdivvc {
   display: flex;
   flex-direction: column;
-  width: 35%;
-  margin: auto;
-  /* border: 1px solid black; */
+  width: 30%;
+  height: 700px;
+  /* margin: auto; */
+  border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -717,6 +720,9 @@ div:nth-child(3) {
   padding: 0%;
   border: none;
   outline: none;
+  height: fit-content;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
   background-color: white;
   text-decoration: underline;
   display: none;
@@ -725,6 +731,7 @@ div:nth-child(3) {
 #secondcoupendiv {
   /* border: 1px solid black; */
   width: 95%;
+  margin-top: 5px;
   height: 50px;
   display: none;
   column-gap: 20px;
@@ -760,11 +767,13 @@ div:nth-child(3) {
 
 #finaldivv {
   border-top: 1px solid black;
+  /* border: 1px solid black; */
   width: 95%;
   margin: auto;
-
+  font-weight: 600;
+  font-size: 25px;
   height: 70px;
   display: flex;
 
-  justify-content: center;
+  /* justify-content: center; */
 }

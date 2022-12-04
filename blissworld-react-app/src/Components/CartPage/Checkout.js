@@ -4,29 +4,49 @@ import Cartmodal from "./Cartmodal";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { FaPlus, FaMinus, FaUnlockAlt, FaQuestionCircle } from "react-icons/fa";
+import { Button, Flex, Text, Textarea } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
   const [state, usestate] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const cartData = useSelector((storeData) => {
+    return storeData.cart;
+  });
+
+  const changeCartState = () => {
+    usestate(cartData);
+  };
+  console.log("checking state", state);
 
   useEffect(() => {
-    getdata();
+    changeCartState();
   }, []);
-  const getdata = () => {
-    fetch("https://vikramdata.onrender.com/products")
-      .then((res) => res.json())
-      .then((json) => usestate(json));
+
+  const cartTotalPrice = (item) => {
+    setCartTotal((prev) => prev + item.count * item.price);
   };
+
+  // useEffect(() => {
+  //   getdata();
+  // }, []);
+  // const getdata = () => {
+  //   fetch("https://vikramdata.onrender.com/products")
+  //     .then((res) => res.json())
+  //     .then((json) => usestate(json));
+  // };
 
   const changee = () => {
     document.getElementById("secondcoupendiv").style.display = "flex";
-    document.getElementById("child33").style.height = "250px";
+    document.getElementById("child33").style.height = "150px";
     document.getElementById("coupensub2").style.display = "block";
     document.getElementById("coupensub").style.display = "none";
   };
 
   const changee2 = () => {
     document.getElementById("secondcoupendiv").style.display = "none";
-    document.getElementById("child33").style.height = "136px";
+    document.getElementById("child33").style.height = "60px";
     document.getElementById("coupensub2").style.display = "none";
     document.getElementById("coupensub").style.display = "block";
   };
@@ -222,9 +242,9 @@ const Checkout = () => {
 
             {state.map((e) => {
               return (
-                <div id="datadiv">
+                <div onLoad={() => cartTotalPrice(e)} id="datadiv">
                   <div id="datadivchild1">
-                    <img src={e.img} alt="gh" />
+                    <img src={e.image1} alt="gh" />
                   </div>
                   <div
                     id="datadivchild2"
@@ -245,7 +265,7 @@ const Checkout = () => {
                         width: "75%",
                       }}
                     >
-                      {e.name}
+                      {e.title}
                     </a>
 
                     <div
@@ -265,38 +285,55 @@ const Checkout = () => {
             })}
           </div>
           <div id="child33">
-            <div id="subtotalam">
-              <span>Subtotal</span>
-              <span>$112</span>
-            </div>
+            {/* <div id="subtotalam">
+              <Flex>
+                <Text>Subtotal </Text>
+                <Text> ${cartTotal}</Text>
+              </Flex>
+            </div> */}
 
             <div id="subtotalam">
-              <span>Shipping</span>
-              <span>Free</span>
+              <Flex>
+                <Text>Shipping </Text>
+              </Flex>
+              <Flex>
+                <Text> Free</Text>
+              </Flex>
             </div>
 
-            <div id="subtotalam">
-              <span>Tax</span>
-              <span>$18</span>
-            </div>
+            {/* <div id="subtotalam">
+              <Flex>
+                <Text> Tax </Text>
+                <Text> $18</Text>
+              </Flex>
+            </div> */}
+
             <div id="coupensubp">
-              <button
+              <Button
                 onClick={() => {
                   changee();
                 }}
                 id="coupensub"
               >
                 Enter Coupon code
-              </button>
+              </Button>
+              {/* <button
+                onClick={() => {
+                  changee();
+                }}
+                id="coupensub"
+              >
+                Enter Coupon code
+              </button> */}
 
-              <button
+              <Button
                 onClick={() => {
                   changee2();
                 }}
                 id="coupensub2"
               >
                 cancel
-              </button>
+              </Button>
             </div>
 
             <div id="secondcoupendiv">
@@ -310,8 +347,15 @@ const Checkout = () => {
 
           <div id="finaldivv">
             <div id="subtotalam">
-              <span>Total(USD)</span>
-              <span>$188</span>
+              <Flex>
+                <Text>Total(USD)</Text>
+              </Flex>
+
+              <Flex>
+                <Text>$ {cartTotal}</Text>
+              </Flex>
+              {/* <span></span>
+              <span>$188</span> */}
             </div>
           </div>
         </div>

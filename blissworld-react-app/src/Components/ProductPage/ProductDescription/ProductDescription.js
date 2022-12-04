@@ -6,19 +6,18 @@ import { MinusIcon, AddIcon } from "@chakra-ui/icons";
 import { useParams } from "react-router-dom";
 
 export const ProductDescription = () => {
-  const[product, setProduct] = useState({});
-  const {endpoint, id} = useParams();
+  const [product, setProduct] = useState({});
+  const { endpoint, id } = useParams();
   console.log(endpoint, id);
 
   useEffect(() => {
-    
-    fetch(`https://blissworldapi.onrender.com/${endpoint}`)
+    fetch(`https://blissworld.glitch.me/${endpoint}`)
       .then((res) => res.json())
       .then((data) => {
         console.log("total data", data);
-        let pro = data.totalData.filter((e)=> e.id==id);
+        let pro = data.totalData.filter((e) => e.id == id);
         // console.log("pro", pro);
-        setProduct({...pro[0]});
+        setProduct({ ...pro[0] });
         // setTotalProducts(data.totalData);
         // setCategories({ ...data.categories });
       })
@@ -27,7 +26,6 @@ export const ProductDescription = () => {
       });
   }, []);
   console.log(product);
-
 
   return (
     <div className="product-description-main-container">
@@ -40,9 +38,7 @@ export const ProductDescription = () => {
             <h1 className="product-title">{product.title}</h1>
             <h3 className="product-short-description">{product.description}</h3>
             <p className="product-rating">Rating</p>
-            <p className="product-review">
-              Read 648 Reviews
-            </p>
+            <p className="product-review">Read 648 Reviews</p>
 
             <div className="product-long-description">
               Powered by clinical-grade vitamin C plus a patented tri-peptide,
@@ -102,7 +98,11 @@ export const ProductDescription = () => {
               <Button>1</Button>
               <IconButton aria-label="Add to friends" icon={<AddIcon />} />
             </ButtonGroup>
-            <AtcBtn item={product} btnName="ADD TO CART" price={product.price} />
+            <AtcBtn
+              item={product}
+              btnName="ADD TO CART"
+              price={product.price}
+            />
           </div>
         </div>
       </div>
