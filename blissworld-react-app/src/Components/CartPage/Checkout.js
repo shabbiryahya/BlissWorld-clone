@@ -1,5 +1,5 @@
 import React from "react";
-import "./stylee.css";
+import "./CartNCheckout.css";
 import Cartmodal from "./Cartmodal";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";

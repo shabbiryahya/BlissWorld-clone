@@ -1,5 +1,6 @@
 .product-description-main-container {
-  background-color: #f3daeb;
+  background: rgb(243,218,235);
+  background: linear-gradient(90deg, rgba(243,218,235,1) 0%, rgba(255,255,255,1) 60%);
   padding: 14px 0 0;
 }
 
@@ -9,17 +10,16 @@
 }
 
 .product-image {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 50%;
-  padding: 15px 65px 30px;
+  padding: 0px 65px 30px;
 }
 
 .product-description-details {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: #ffff;
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
   width: 50%;
   padding: 0 60px 0 50px;
@@ -56,7 +56,7 @@
   /* float:left; */
   width: 50%;
   padding: 0 60px 30px 10px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .buttons {
   margin-top: 20px;
@@ -67,6 +67,7 @@
   display: flex;
   justify-content: center;
   background-color: #ffff;
+  
 }
 .video-link iframe {
   border-radius: 5px;

@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import "./stylee.css";
+import "./CartNCheckout.css";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { action } from "../../Redux/action";
 import { ProductList } from "../ProductPage/ProductList/ProductList";
 import { useNavigate } from "react-router-dom";
+import CartDiv from "./CartDiv";
 
 function Cartmodal() {
   const nav = useNavigate();
@@ -26,7 +27,7 @@ function Cartmodal() {
 
   useEffect(() => {
     changeCartState();
-    // getdata();
+    
   }, []);
 
   const cartTotalPrice = (item) => {
@@ -76,14 +77,17 @@ function Cartmodal() {
 
   const closemodale = () => {
     // document.getElementById("cart_modal").style.display = "none";
-    nav("/product");
+    // nav("/product");
+    CartDiv();
   };
 
   const proceedToCheckout = () => {
+    CartDiv();
     nav("/checkout");
+    
   };
   return (
-    <div className="cart_modal" id="cart_modal">
+    <div className="cart_modal" id="cart_moda">
       <div>
         <div id="cart_child">
           <a
@@ -100,7 +104,7 @@ function Cartmodal() {
           <h3>Shopping Bag</h3>
           <p>(6 items)</p>
         </div>
-        {state.map((e) => {
+        {cartData.map((e) => {
           return (
             <div id="datadiv" onLoad={() => cartTotalPrice(e)}>
               <div id="datadivchild1">

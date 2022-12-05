@@ -9,5 +9,5 @@ const combineReducer = combineReducers({
     cartReducer, isAuthReducer
 })
 
-export  const store = legacy_createStore(combineReducer,
+export  const store = legacy_createStore(cartReducer,
     composeWithDevTools(applyMiddleware(thunk)));
