@@ -486,9 +486,9 @@
   /* border: 1px solid black; */
 }
 #firstcorrecttick > div:nth-child(2),
-div:nth-child(3) {
+#firstcorrecttick > div:nth-child(3) {
   margin-top: 5px;
-  width: 30%;
+  /* width: 30%; */
 }
 
 #firstcorrecttick > div:nth-child(3) button {
@@ -517,7 +517,7 @@ div:nth-child(3) {
 
 #paymentAcordian > div:nth-child(2),
 div:nth-child(3) {
-  height: 60px;
+  /* height: 60px; */
 }
 #inp {
   height: 30px;
@@ -776,4 +776,8 @@ div:nth-child(3) {
   display: flex;
 
   /* justify-content: center; */
+}
+
+#cart_moda {
+  display: none;
 }

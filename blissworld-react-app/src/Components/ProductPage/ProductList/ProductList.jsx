@@ -16,15 +16,17 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import Cartmodal from "../../CartPage/Cartmodal";
 
 export const ProductList = () => {
-  const { title } = useParams();
-  console.log(title);
+  
+  const { endpoint1 } = useParams();
+  // console.log(endpoint);
   const [totalProducts, setTotalProducts] = useState([]);
   const [categories, setCategories] = useState({});
-  const endPoint = "bestSeller";
+  // const endpoint1 = "bestSeller";
   useEffect(() => {
-    fetch(`https://blissworld.glitch.me/${endPoint}`)
+    fetch(`https://blissworld.glitch.me/${endpoint1}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log("total data", data);
@@ -40,9 +42,9 @@ export const ProductList = () => {
     <div className="parent-container">
       <div className="sorting-div">
         <div className="sortBy">
-          <label>SORT BY: Default</label>
+          <label>SORT BY:</label>
           <Menu>
-            <MenuButton righticon={<ChevronDownIcon />}>D</MenuButton>
+            <MenuButton>Default<ChevronDownIcon /></MenuButton>
             <MenuList>
               <MenuItem>Default</MenuItem>
               <MenuItem>A to Z</MenuItem>
@@ -86,7 +88,7 @@ export const ProductList = () => {
         </div>
         <div className="product-container">
           {totalProducts.map((item, index) => (
-            <ProductCard endpoint={endPoint} item={item} key={index + 1} />
+            <ProductCard endpoint={endpoint1} item={item} key={index + 1} />
           ))}
         </div>
       </div>

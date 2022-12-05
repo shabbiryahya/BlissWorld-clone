@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Slider/Slider.css';
 import styled from 'styled-components';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import { SliderItems } from './Data';
+import '../Slider/Slider.css';
+import { useEffect } from 'react';
+
 const Container = styled.div`
-  width: 100;
-  height: 100vh;
-  display: flex;
-  ${'' /* background-color: rgb(194, 230, 240); */}
   position: relative;
+
+  width: 100%;
+  height: 82vh;
+  display: flex;
+
+  overflow: hidden;
+  margin:1px  auto;
+  
+
 `;
+
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
+  background-color: white;
+  border-radius: 50%;
   display: flex;
-  
-  
-  top: 0;
-  bottom: 0;
-  left:10px
   align-items: center;
   justify-content: center;
   position: absolute;
-left:${(props) => props.direction === 'left' && '10px'} ;
-right:${(props) => props.direction === 'right' && '10px'} ;
+  top: 0;
+  bottom: 0;
 
   margin: auto;
-  cursor:pointer;
-  opacity:0.5;
+  left: ${(props) => props.direction === 'left' && '10px'};
+  right: ${(props) => props.direction === 'right' && '10px'};
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  text-align: left;
+  transition: all 0.5s ease-in-out;
 `;
 
 const Slide = styled.div`
@@ -39,10 +53,13 @@ const Slide = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+
+  background-color: #${(props) => props.bg};
 `;
 const ImageContainer = styled.div`
-  flex: 1;
   height: 100%;
+
+  flex: 1;
 `;
 
 const Image = styled.img`
@@ -52,6 +69,7 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  margin-top: -180px;
 `;
 
 const Title = styled.h1`
@@ -59,41 +77,55 @@ const Title = styled.h1`
 `;
 const Description = styled.p`
   font-family: 'Arvo', serif;
+  margin: 30px 0px;
 `;
-const Button = styled.button``;
-
-// const anchor = styled.a``;
-
-// const anchordiv = styled.div``;
 
 function Slider() {
+  let [slideIndex, setSlideIndex] = useState(0);
+  
+  const handleClick = (direction) => {
+    if (direction === 'left') {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
+
+  
+
+
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick('left')}>
         <KeyboardDoubleArrowLeftIcon />
       </Arrow>
 
-      <Wrapper>
-        <Slide>
-          <ImageContainer>
-            <Image
-              src="https://cdn11.bigcommerce.com/s-9p889rxpkb/images/stencil/original/image-manager/hp-banner.gif?t=1669089944&_gl=1*1uc6apn*_ga*MTIzNjY1NjYwNy4xNjUyMTM3Njc4*_ga_WS2VZYPC6G*MTY2OTA4OTUzNi42MDguMS4xNjY5MDkwMDkyLjQ3LjAuMA."
-              alt="img1"
-            />
-          </ImageContainer>
+      <Wrapper slideIndex={slideIndex}>
+        {SliderItems.map((element, index) => {
+          return (
+            <Slide bg={element.backcolor} key={index + 1}>
+              <ImageContainer>
+                <Image src={element.image} alt={element.title} />
+              </ImageContainer>
 
-          <InfoContainer>
-            <Title>Shop Our Holiday</Title>
-            <Description>
-              Stock up on glow-giving skincare for everyone on your list. So
-              Many Blissful Gifts To Give.
-            </Description>
-            <Button id="neonShadow">SHOW NOW</Button>
-          </InfoContainer>
-        </Slide>
+              <InfoContainer>
+                <Title>{element.title}</Title>
+                <Description>{element.description}</Description>
+                {
+                  <button
+                    style={{ backgroundColor: element.btnback }}
+                    id="neonShadow"
+                  >
+                    {element.btnname}
+                  </button>
+                }
+              </InfoContainer>
+            </Slide>
+          );
+        })}
       </Wrapper>
 
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick('right')}>
         <KeyboardDoubleArrowRightIcon />
       </Arrow>
     </Container>
