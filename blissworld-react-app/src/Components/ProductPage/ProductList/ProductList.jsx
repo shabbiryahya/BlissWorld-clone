@@ -43,9 +43,9 @@ export const ProductList = () => {
       <div className="sorting-div">
         <div className="sortBy">
           <label>SORT BY:</label>
-          <Menu>
-            <MenuButton>Default<ChevronDownIcon /></MenuButton>
-            <MenuList>
+          <Menu zIndex="dropdown">
+            <MenuButton >Default<ChevronDownIcon /></MenuButton>
+            <MenuList zIndex="1000" >
               <MenuItem>Default</MenuItem>
               <MenuItem>A to Z</MenuItem>
               <MenuItem>Z to A</MenuItem>

@@ -20,7 +20,7 @@ function LastProduct() {
     }
   }, [data]);
   return (
-    <div>
+    <div className="last-product-container">
       <div className="last-product-header-div">
         <h2>Perfect Pairings</h2>
       </div>
@@ -36,11 +36,16 @@ function LastProduct() {
               />
               <h2>{item.title}</h2>
               <p>{item.description}</p>
+              <div className="heart-rating-last-product">
+
               <AiFillHeart style={{ color: 'rgb(165, 215, 252)' }} />
               <AiFillHeart style={{ color: 'rgb(165, 215, 252)' }} />
               <AiFillHeart style={{ color: 'rgb(165, 215, 252)' }} />
               <AiFillHeart style={{ color: 'rgb(165, 215, 252)' }} />
               <IoMdHeartHalf style={{ color: 'rgb(165, 215, 252)' }} />
+              </div>
+
+
               <AtcBtn btnName="ADD TO BAG" price={item.price} />
             </div>
           );

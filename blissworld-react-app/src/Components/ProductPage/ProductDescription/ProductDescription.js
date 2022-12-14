@@ -94,10 +94,11 @@ export const ProductDescription = () => {
               isAttached
               variant="outline"
             >
-              <IconButton aria-label="Add to friends" icon={<MinusIcon />} />
+              {/* <IconButton aria-label="Add to friends" icon={<MinusIcon />} /> */}
               <Button>1</Button>
-              <IconButton aria-label="Add to friends" icon={<AddIcon />} />
+              {/* <IconButton aria-label="Add to friends" icon={<AddIcon />} /> */}
             </ButtonGroup>
+
             <AtcBtn
               item={product}
               btnName="ADD TO CART"

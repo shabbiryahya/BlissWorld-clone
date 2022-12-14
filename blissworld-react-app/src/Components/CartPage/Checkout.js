@@ -6,14 +6,20 @@ import { useEffect, useState } from "react";
 import { FaPlus, FaMinus, FaUnlockAlt, FaQuestionCircle } from "react-icons/fa";
 import { Button, Flex, Text, Textarea } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 const Checkout = () => {
   const [state, usestate] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const nav= useNavigate();
 
   const cartData = useSelector((storeData) => {
     return storeData.cart;
   });
+
+  const sendToOrderConfirm=()=>{
+    nav("/orderconfirm")
+  }
 
   const changeCartState = () => {
     usestate(cartData);
@@ -28,14 +34,7 @@ const Checkout = () => {
     setCartTotal((prev) => prev + item.count * item.price);
   };
 
-  // useEffect(() => {
-  //   getdata();
-  // }, []);
-  // const getdata = () => {
-  //   fetch("https://vikramdata.onrender.com/products")
-  //     .then((res) => res.json())
-  //     .then((json) => usestate(json));
-  // };
+  
 
   const changee = () => {
     document.getElementById("secondcoupendiv").style.display = "flex";
@@ -64,7 +63,7 @@ const Checkout = () => {
               <BsCheckCircleFill fontSize="28px" color="rgb(115,210,230)" />
               <h2>Customer</h2>
             </div>
-            <div>vikram99301@gmail.com</div>
+            <div>anurag@gmail.com</div>
             <div>
               <button>SIGNOUT</button>
             </div>
@@ -76,8 +75,7 @@ const Checkout = () => {
               <h2>Shipping</h2>
             </div>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              exercitationem eaque unde nemo? Perferendis hic sequi debitis eius
+              House no. 323 Sonagir Sector -A
             </div>
             <div>
               <button>EDIT</button>
@@ -90,8 +88,7 @@ const Checkout = () => {
               <h2>Billing</h2>
             </div>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              exercitationem eaque unde nemo? Perferendis hic sequi debitis eius
+            House no. 323 Sonagir Sector -A, Bhopal M.p.
             </div>
             <div>
               <button>EDIT</button>
@@ -107,7 +104,7 @@ const Checkout = () => {
             <div id="paymentAcordian">
               <div id="paymentchildd">
                 <div id="disp">
-                  <input type="radio" id="inp" />
+                  <input type="radio" id="inp" checked />
                   <div id="cardpayment">
                     <div>Credit Card</div>
                     <div id="payimgs">
@@ -228,6 +225,9 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
+            <div id="buttonconfirm" onClick={()=>{
+              sendToOrderConfirm();
+            }}>Place Order</div>
           </div>
         </div>
 
@@ -238,7 +238,7 @@ const Checkout = () => {
               <h3>Order Summary</h3>
               <button>Edit Cart</button>
             </div>
-            <h3 id="qutyyy">7 Items</h3>
+            <h3 id="qutyyy"></h3>
 
             {state.map((e) => {
               return (

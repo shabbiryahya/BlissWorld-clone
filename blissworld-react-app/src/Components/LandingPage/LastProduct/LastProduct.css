@@ -1,6 +1,11 @@
+.last-product-container{
+    margin-bottom: 35px;
+}
+
 .last-product-header-div {
     font-family: "Allerta Stencil, sans-serif";
     margin-top: 15%;
+    
 }
 
 .last-product-header-div {
@@ -34,4 +39,8 @@
 
 .last-product-innercard img :hover {
     width: 100%;
+}
+.heart-rating-last-product{
+    display: flex;
+    justify-content: center;
 }
