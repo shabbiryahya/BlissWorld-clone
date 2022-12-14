@@ -24,7 +24,7 @@ We have assigned our tasks equally in the team. For example, Landing page was cr
 ## Some Screenshots of out Projects :-
 ### * Landing page:
 
-![Alt text](./public/pages_screenshot/bliss-landing-page.png?raw=true "landing page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-landing-page.png?raw=true "landing page ss")
 
 ### * Landing page Features
 
@@ -32,29 +32,29 @@ In landing page there is one beautiful navbar and sidebar. sliding images are mo
 
 ### * Login page:- 
 
-![Alt text](./public/pages_screenshot/bliss-login-page.png?raw=true "login page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-login-page.png?raw=true "login page ss")
 
 Here user can create their account by filling Create Account Form.
 From here, user can login by entering email id and password
 
 ### * Product page:-
-![Alt text](./public/pages_screenshot/bliss-product-page.png?raw=true "product page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-product-page.png?raw=true "product page ss")
 
 In product page, user can buy any of the items by adding it in the cart. User can also see the details of that particular product by clicking on details button.
 
 ### * Product Description Page:-
-![Alt text](./public/pages_screenshot/bliss-product-description-page.png?raw=true "product description page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-product-description-page.png?raw=true "product description page ss")
 
 Here you will see details of the product.
 
 ### * Cart page:-
-![Alt text](./public/pages_screenshot/bliss-cart-modal-page.png?raw=true "cart modal page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-cart-modal-page.png?raw=true "cart modal page ss")
 
 
 In cart Page, user can increase and decrease the quantity and also he can delete the items from cart and price will change accordingly. There is one option of coupon also from where user can apply coupon.
 
 ### * Payment Page:-
-![Alt text](./public/pages_screenshot/bliss-checkout-page.png?raw=true "checkout page ss")
+![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-checkout-page.png?raw=true "checkout page ss")
 
 ### * Payment page Features:- 
 
