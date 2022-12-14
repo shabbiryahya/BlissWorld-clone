@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Ecom Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone of "https://www.blissworld.com".
 
-## Available Scripts
+Deployed link- https://bliss-world-clone.vercel.app/
 
-In the project directory, you can run:
+Hello readers, this is all about my 3rd Construct week project in Masai School i.e. cloning of Bliss world website. In this project, we were a team of 5 members including myself, We have completed this project in 5 days.
 
-### `npm start`
+## My team members are 
+* Abhiraj
+* Shabbir Yahya
+* Harsh Anand
+* Vikram Sharma 
+* Anurag Yadav
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tools & Technology Used:
+- React
+- Redux
+- Context API
+- JavaScript
+- Json-Server
+- Html 
+- Css
+- Chakra UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Task Assignment:
+We have assigned our tasks equally in the team. For example, Landing page was created by Shabbir Yahya. Product page And Product Description page was created by me. Navbar, footer section was created by Harsh Anand. Cart page And Checkout Page was created by Vikram Sharma and Login and Signup page was created by Abhiraj.
 
-### `npm test`
+Features:
+Landing page:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Landing page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In landing page there is one beautiful navbar and sidebar. sliding images are moving continuously. There is one footer section also.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Register page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Here user can create their account by filling Create Account Form.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Login page:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+From here, user can login by entering email id and password
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Product page:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In product page, user can buy any of the items by adding it in the cart. User can also see the details of that particular product by clicking on details button.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Product Description Page:
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Here you will see details of the product.
 
-### Analyzing the Bundle Size
+Cart page:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+In cart Page, user can increase and decrease the quantity and also he can delete the items from cart and price will change accordingly. There is one option of coupon also from where user can apply coupon.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Payment Page:
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Payment page
 
-### Deployment
+In payment page, there are three options available for user. He can either choose cash on delivery, credit card or debit card option for payment and after filling all the correct details his payment will be done and he will be redirected to thankyou page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Thankyou page:
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thankyou page
+
+After successful payment, user will be redirected to this page and from here he can again go to landing page.
+
+This is a brief summary of our project. It was a great experience doing this project. We have learnt so many things in making the project. This would not have been possible without the team support. All the team members were so supportive and co-operative. Special thanks to all our teachers and mentors who guided us so well.
+
+Project Links:
+GitHub link- https://github.com/anuragn0507/BlissWorld-clone
+
+Deployed link- https://bliss-world-clone.vercel.app/
