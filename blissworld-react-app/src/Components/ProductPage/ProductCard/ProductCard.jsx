@@ -1,29 +1,54 @@
 import React from "react";
 import { AtcBtn } from "../AddToCart/AtcBtn";
 import "./ProductCard.css";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
+import { Favorite } from "@mui/icons-material";
+import { AiFillHeart } from "react-icons/ai";
+import { IoMdHeartHalf } from "react-icons/io";
 
 function ProductCard({ item, endpoint }) {
   const nav = useNavigate();
 
-  const handleCardClick=(item)=>{
-    nav(`/${endpoint}/${item.id}`)
-  }
+  const handleCardClick = (item) => {
+    nav(`/${endpoint}/${item.id}`);
+  };
 
   return (
-    <div  className="product-card">
+    <div className="product-card-xyz">
       <figure>
-        <div onClick={()=> {handleCardClick(item)}} className="product-card-image">
+        <div
+          onClick={() => {
+            handleCardClick(item);
+          }}
+          className="product-card-image"
+        >
           <img src={item.image2} alt="product-back" className="img-back" />
           <img src={item.image1} alt="product" className="img-front" />
         </div>
       </figure>
       <div className="product-card-body" style={{}}>
-        <div onClick={()=> {handleCardClick(item)}} className="teaser-card-rating" style={{}}>
-          <p>rating: 4/5</p>
+        <div
+          onClick={() => {
+            handleCardClick(item);
+          }}
+          className="teaser-card-rating"
+        >
+          <div className="start-rating-card">
+            <AiFillHeart style={{ color: "rgb(165, 215, 252)" }} />
+            <AiFillHeart style={{ color: "rgb(165, 215, 252)" }} />
+            <AiFillHeart style={{ color: "rgb(165, 215, 252)" }} />
+            <AiFillHeart style={{ color: "rgb(165, 215, 252)" }} />
+            <IoMdHeartHalf style={{ color: "rgb(165, 215, 252)" }} />
+          </div>
         </div>
 
-        <div onClick={()=> {handleCardClick(item)}} className="card-title-short-description">
+        <div
+          onClick={() => {
+            handleCardClick(item);
+          }}
+          className="card-title-short-description"
+        >
           <h3 className="card-title">
             <a href="">{item.title}</a>
           </h3>

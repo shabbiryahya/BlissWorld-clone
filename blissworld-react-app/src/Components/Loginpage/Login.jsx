@@ -30,6 +30,7 @@ function Login() {
     getdata();
     setTimeout(() => {
       setLoading(false);
+      getdata();
     }, 1000);
   }, []);
 
@@ -50,8 +51,16 @@ function Login() {
     userdata.map(function (ele) {
       if (ele.email == email && ele.password == password) {
         validUser = true;
-        let currentUser = ele.name;
+        let obj={
+          email:ele.email,
+          name:ele.name,
+          address:ele.name
+        }
+        localStorage.setItem("userdata",JSON.stringify(obj))
+        localStorage.setItem("loginStatus",true)
       } else if (ele.email == email) {
+
+
         userNotAllowed = true;
         return;
       }

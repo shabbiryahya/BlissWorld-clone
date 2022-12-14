@@ -49,7 +49,7 @@ const navigate=useNavigate()
 
   
 
-  const initState= { email: "", password: "",confirmpassword :""}
+  const initState= { email: "", password: "",confirmpassword :"",name:""}
   const [formData, setFormData] = useState(initState);
 
   const handleInput = (e) => {
@@ -67,7 +67,9 @@ const navigate=useNavigate()
 
       
       email : formData.email,
-      password :formData.password
+      password :formData.password,
+      name :formData.name,
+      address :formData.address
    };
    
    let confirmpassword = formData.confirmpassword;
@@ -322,14 +324,18 @@ if(flag){
                       </label>
                       <input
                         type="text"
-                        name="FormField[2][4]"
+                     
                         id="FormField_4_input"
                         className="form-input"
-                        data-label="First Name"
+                       
                         data-input
                         aria-required="true"
                         maxLength={30}
-                        data-field-type="FirstName"
+                        onInput={handleInput}
+                        value={formData.name}
+                        name="name"
+                        required
+                        
                       />
                       <span style={{ display: "none" }} />
                     </div>
@@ -366,14 +372,17 @@ if(flag){
                       </label>
                       <input
                         type="text"
-                        name="FormField[2][8]"
+                       
                         id="FormField_8_input"
                         className="form-input"
                         data-label="Address Line 1 (Required)"
                         data-input
                         aria-required="true"
                         maxLength={30}
-                        data-field-type="AddressLine1"
+                        onInput={handleInput}
+                        value={formData.address}
+                        name="address"
+                        required
                       />
                       <span style={{ display: "none" }} />
                     </div>

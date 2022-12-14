@@ -5,6 +5,7 @@ import { Image } from "@chakra-ui/react";
 import { LocalMall, Login, Place } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
+import CartDiv from "../CartPage/CartDiv";
 
 
 export default function UpperNavbar() {
@@ -13,11 +14,12 @@ export default function UpperNavbar() {
     nav("/login");
   }
 
+ 
   return (
     <div >
     <Box
       display="flex"
-      mt="2px"
+      mt="0px"
       bg="#73d2e6"
       maxW="100%"
       maxH="100"
@@ -43,7 +45,7 @@ export default function UpperNavbar() {
         </Box>
       </Box>
 
-      <Box boxSize="350px" ml="36%">
+      <Box onClick={()=> nav("/")} boxSize="350px" ml="36%">
         <Image
           
           objectFit="cover"
@@ -51,17 +53,17 @@ export default function UpperNavbar() {
         />
       </Box>
 
-      <Box onClick={goToLogin} display="flex" mt="2" ml="570">
+      <Box  display="flex" mt="2" ml="570">
         <Box>
           <Box>
-            <Login style={{ fontSize: "35px" }} />
+            <Login onClick={goToLogin} style={{ fontSize: "35px" }} />
           </Box>
-          <Box>
+          <Box onClick={goToLogin} >
             <p>Login</p>
           </Box>
         </Box>
 
-        <Box mr="5" ml="10">
+        <Box onClick={()=> CartDiv()} mr="5" ml="10">
           <Box>
             <LocalMall style={{ fontSize: "35px" }} />
           </Box>
