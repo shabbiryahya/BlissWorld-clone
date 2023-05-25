@@ -24,7 +24,7 @@ We have assigned our tasks equally in the team. For example, Landing page was cr
 ## Some Screenshots of out Projects :-
 ### * Landing page:
 
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-landing-page.png?raw=true "landing page ss")
+![Alt text](https://i.ibb.co/4Kvr8MB/home.png)
 
 ### * Landing page Features
 
@@ -32,29 +32,29 @@ In landing page there is one beautiful navbar and sidebar. sliding images are mo
 
 ### * Login page:- 
 
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-login-page.png?raw=true "login page ss")
+![Alt text](https://i.imgur.com/WCSQjoq.png)
 
 Here user can create their account by filling Create Account Form.
 From here, user can login by entering email id and password
 
 ### * Product page:-
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-product-page.png?raw=true "product page ss")
+![Alt text](https://i.imgur.com/wFVyEdJ.png)
 
 In product page, user can buy any of the items by adding it in the cart. User can also see the details of that particular product by clicking on details button.
 
 ### * Product Description Page:-
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-product-description-page.png?raw=true "product description page ss")
+![Alt text](https://i.imgur.com/XupQWUT.png)
 
 Here you will see details of the product.
 
 ### * Cart page:-
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-cart-modal-page.png?raw=true "cart modal page ss")
+![Alt text](https://i.imgur.com/Y1UAxWa.png)
 
 
 In cart Page, user can increase and decrease the quantity and also he can delete the items from cart and price will change accordingly. There is one option of coupon also from where user can apply coupon.
 
 ### * Payment Page:-
-![Alt text](./blissworld-react-app/public/pages_screenshot/bliss-checkout-page.png?raw=true "checkout page ss")
+![Alt text](https://i.imgur.com/iJvhnrG.png)
 
 ### * Payment page Features:- 
 
@@ -74,6 +74,6 @@ This is a brief summary of our project. It was a great experience doing this pro
 * Anurag Yadav
 
 ### * Project Links:-
-GitHub link- https://github.com/anuragn0507/BlissWorld-clone
+GitHub link- https://github.com/shabbiryahya/BlissWorld-clone
 
 Deployed link- https://bliss-world-clone.vercel.app/
